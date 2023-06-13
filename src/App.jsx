@@ -1,10 +1,13 @@
 import './App.css'
+import SendMessage from './components/SendMessage'
+import ViewMessages from './components/ViewMessages'
 
 function App() {
     return (
         <>
             <div>
-                <h2>Vite + React</h2>
+                <ViewMessages />
+                <SendMessage />
             </div>
         </>
     )
