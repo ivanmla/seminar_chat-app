@@ -4,27 +4,29 @@ import SendMessage from './components/SendMessage'
 import ViewMessages from './components/ViewMessages'
 
 function App() {
-    const [newMessage, setNewMessage] = useState(null)
+    const [newMessageText, setNewMessageText] = useState('')
     const [messages, setMessages] = useState([])
 
-    // temporary, for rendering messages in View:
-    const setTestMessageHandler = () => {
-        setMessages([
-            {
-                text: 'First message text',
-                member: {
-                    color: 'blue',
-                    username: 'first username',
-                },
-            },
-            {
-                text: 'Second message text',
-                member: {
-                    color: 'red',
-                    username: 'second username',
-                },
-            },
-        ])
+    function randomName() {
+        const adjectives = ['autumn', 'hidden', 'bitter', 'misty', 'silent']
+        const nouns = ['river', 'breeze', 'moon', 'rain', 'wind', 'sea']
+        const adjective =
+            adjectives[Math.floor(Math.random() * adjectives.length)]
+        const noun = nouns[Math.floor(Math.random() * nouns.length)]
+        return adjective + noun
+    }
+
+    function randomColor() {
+        return '#' + Math.floor(Math.random() * 0xffffff).toString(16)
+    }
+
+    const setMessageHandler = () => {
+        if (!newMessageText) return
+        const msg = {
+            text: newMessageText,
+            member: { username: randomName(), color: randomColor() },
+        }
+        setMessages([...messages, msg])
     }
 
     return (
@@ -32,8 +34,8 @@ function App() {
             <div>
                 <ViewMessages messages={messages} />
                 <SendMessage
-                    setNewMessage={setNewMessage}
-                    setTestMessageHandler={setTestMessageHandler}
+                    setNewMessageText={setNewMessageText}
+                    setMessageHandler={setMessageHandler}
                 />
             </div>
         </>

@@ -1,13 +1,18 @@
 import React from 'react'
 
-const SendMessage = ({ setNewMessage, setTestMessageHandler }) => {
-    const newMessageHandler = (event) => {
-        setNewMessage({ text: event.target.value })
+const SendMessage = ({ setNewMessageText, setMessageHandler }) => {
+    const newMessageTextHandler = (event) => {
+        setNewMessageText(event.target.value)
     }
     return (
         <>
-            <input type="text" onChange={newMessageHandler}></input>
-            <button onClick={setTestMessageHandler}>Send</button>
+            <input
+                type="text"
+                placeholder="Enter your message"
+                autoFocus={true}
+                onChange={newMessageTextHandler}
+            ></input>
+            <button onClick={setMessageHandler}>Send</button>
         </>
     )
 }
