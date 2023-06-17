@@ -9,6 +9,7 @@ const SendMessage = ({ onSendMessage }) => {
     const setMessageHandler = (event) => {
         event.preventDefault()
         onSendMessage(newMessageText)
+        setNewMessageText({ text: '' })
     }
     return (
         <>
@@ -17,6 +18,7 @@ const SendMessage = ({ onSendMessage }) => {
                 placeholder="Enter your message"
                 autoFocus={true}
                 onChange={newMessageTextHandler}
+                value={newMessageText ? newMessageText.text : ''}
             ></input>
             <button onClick={setMessageHandler}>Send</button>
         </>
