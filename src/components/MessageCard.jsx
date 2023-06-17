@@ -6,8 +6,10 @@ const MessageCard = ({ message }) => {
             {console.log(
                 'MessageCard rendered, message: ' + JSON.stringify(message)
             )}
-            <div style={{ color: message.member.color }}>
-                <span>{message.member.username}: </span>
+            <div>
+                <span style={{ color: message.member.clientData.color }}>
+                    {message.member.clientData.username}:{' '}
+                </span>
                 {message.text}
             </div>
         </>
