@@ -9,7 +9,7 @@ const SendMessage = ({ onSendMessage }) => {
     const setMessageHandler = (event) => {
         event.preventDefault()
         onSendMessage(newMessageText)
-        setNewMessageText({ text: '' })
+        setNewMessageText({ text: '' }) //
     }
     return (
         <>
