@@ -10,7 +10,7 @@ function App() {
         color: randomColor(),
     })
     const [drone, setDrone] = useState(
-        new window.Scaledrone('Tp74Cc0xsXQT93RB', {
+        new window.Scaledrone(import.meta.env.VITE_SCALEDRONE_CHANNEL_ID, {
             data: member,
         })
     )
