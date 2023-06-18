@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const SendMessage = ({ setNewMessageText, setMessageHandler }) => {
+const SendMessage = ({ onSendMessage }) => {
+    const [newMessageText, setNewMessageText] = useState({ text: '' })
+
     const newMessageTextHandler = (event) => {
         setNewMessageText(event.target.value)
     }
+
+    const setMessageHandler = (event) => {
+        event.preventDefault()
+        onSendMessage(newMessageText)
+    }
+
     return (
         <>
             <input
