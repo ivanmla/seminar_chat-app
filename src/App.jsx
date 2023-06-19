@@ -4,6 +4,19 @@ import SendMessage from './components/SendMessage'
 import ViewMessages from './components/ViewMessages'
 
 function App() {
+    function randomName() {
+        const adjectives = ['autumn', 'hidden', 'bitter', 'misty', 'silent']
+        const nouns = ['river', 'breeze', 'moon', 'rain', 'wind', 'sea']
+        const adjective =
+            adjectives[Math.floor(Math.random() * adjectives.length)]
+        const noun = nouns[Math.floor(Math.random() * nouns.length)]
+        return adjective + noun
+    }
+
+    function randomColor() {
+        return '#' + Math.floor(Math.random() * 0xffffff).toString(16)
+    }
+
     const [messages, setMessages] = useState([])
     const [member, setMember] = useState({
         username: randomName(),
@@ -31,19 +44,6 @@ function App() {
             setMember({ messages })
         })
     }, [])
-
-    function randomName() {
-        const adjectives = ['autumn', 'hidden', 'bitter', 'misty', 'silent']
-        const nouns = ['river', 'breeze', 'moon', 'rain', 'wind', 'sea']
-        const adjective =
-            adjectives[Math.floor(Math.random() * adjectives.length)]
-        const noun = nouns[Math.floor(Math.random() * nouns.length)]
-        return adjective + noun
-    }
-
-    function randomColor() {
-        return '#' + Math.floor(Math.random() * 0xffffff).toString(16)
-    }
 
     function onSendMessage(newMessageText) {
         if (!newMessageText) return
