@@ -26,23 +26,16 @@ class App extends Component {
 
     constructor() {
         super()
-        {
-            console.log('constructor called')
-        }
         this.drone = new window.Scaledrone(
             import.meta.env.VITE_SCALEDRONE_CHANNEL_ID,
             {
                 data: this.state.member,
             }
         )
-        {
-            console.log('drone created')
-        }
     }
 
     render() {
         this.openDroneAndRoom()
-        console.log('render App called')
         return (
             <>
                 <div>
