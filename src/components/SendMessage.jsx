@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const SendMessage = ({ onSendMessage }) => {
     console.log('Send message called')
-    const [newMessageText, setNewMessageText] = useState({ text: '' })
+    const [newMessageText, setNewMessageText] = useState(null)
 
     const newMessageTextHandler = (event) => {
         setNewMessageText(event.target.value)
@@ -10,7 +10,7 @@ const SendMessage = ({ onSendMessage }) => {
     const setMessageHandler = (event) => {
         event.preventDefault()
         onSendMessage(newMessageText)
-        setNewMessageText({ text: '' })
+        setNewMessageText('')
     }
     return (
         <>
@@ -20,7 +20,7 @@ const SendMessage = ({ onSendMessage }) => {
                 placeholder="Enter your message"
                 autoFocus={true}
                 onChange={newMessageTextHandler}
-                value={newMessageText ? newMessageText.text : ''}
+                value={newMessageText ? newMessageText : ''}
             ></input>
             <button onClick={setMessageHandler}>Send</button>
         </>
