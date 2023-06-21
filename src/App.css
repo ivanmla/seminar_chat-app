@@ -11,21 +11,25 @@ h2 {
 }
 .messages {
     height: 70vh;
-    background-color: rgb(156, 225, 213);
     padding: 10px 0;
     margin: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
 }
 .message {
-    background-color: rgb(201, 197, 250);
-    margin: auto;
-    padding: 5px;
+    border: 1px solid rgb(17, 105, 120);
+    border-radius: 15px;
+    margin: 5px auto;
+    padding: 8px;
     width: 90%;
     text-align: left;
 }
 .message-currentMember {
-    background-color: rgb(246, 183, 193);
-    margin: auto;
-    padding: 5px;
+    border: 1px solid rgb(17, 105, 120);
+    border-radius: 15px;
+    margin: 5px auto;
+    padding: 8px;
     width: 90%;
     text-align: right;
 }
@@ -33,7 +37,12 @@ h2 {
     color: rgb(0, 0, 0);
 }
 input {
-    padding: 10px;
+    padding: 8px;
+    font-size: 16px;
+    margin: auto;
+}
+button {
+    padding: 8px 16px;
     font-size: 16px;
     margin: auto;
 }
