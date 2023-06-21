@@ -3,14 +3,10 @@ import MessageCard from './MessageCard'
 
 const ViewMessages = ({ messages }) => {
     return (
-        <>
-            <div>
-                {messages &&
-                    messages.map((m) => (
-                        <MessageCard key={m.text} message={m} />
-                    ))}
-            </div>
-        </>
+        <div className="messages">
+            {messages &&
+                messages.map((m) => <MessageCard key={m.text} message={m} />)}
+        </div>
     )
 }
 

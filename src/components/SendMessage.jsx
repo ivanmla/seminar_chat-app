@@ -13,14 +13,18 @@ const SendMessage = ({ onSendMessage }) => {
     }
     return (
         <>
-            <input
-                type="text"
-                placeholder="Enter your message"
-                autoFocus={true}
-                onChange={newMessageTextHandler}
-                value={newMessageText ? newMessageText : ''}
-            ></input>
-            <button onClick={setMessageHandler}>Send</button>
+            <div className="input">
+                <input
+                    type="text"
+                    placeholder="Enter your message"
+                    autoFocus={true}
+                    onChange={newMessageTextHandler}
+                    value={newMessageText ? newMessageText : ''}
+                ></input>
+                <button className="sendButton" onClick={setMessageHandler}>
+                    Send
+                </button>
+            </div>
         </>
     )
 }

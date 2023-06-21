@@ -39,9 +39,10 @@ class App extends Component {
         return (
             <>
                 <div>
-                    <ViewMessages messages={this.state.messages} />
-                    <SendMessage onSendMessage={this.onSendMessage} />
+                    <h1>Welcome to chat app</h1>
                 </div>
+                <ViewMessages messages={this.state.messages} />
+                <SendMessage onSendMessage={this.onSendMessage} />
             </>
         )
     }
