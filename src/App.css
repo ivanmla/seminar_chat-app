@@ -5,23 +5,32 @@
     height: 90vh;
     background-color: rgb(64, 190, 233);
 }
-h1 {
+h2 {
     color: white;
     margin: 0 auto;
 }
 .messages {
-    height: 100vh;
     height: 70vh;
-    background-color: rgb(15, 194, 164);
+    background-color: rgb(156, 225, 213);
     padding: 10px 0;
-    width: 100%;
+    margin: 5px;
 }
 .message {
-    background-color: rgb(11, 53, 46);
+    background-color: rgb(201, 197, 250);
     margin: auto;
     padding: 5px;
-    width: 80%;
+    width: 90%;
     text-align: left;
+}
+.message-currentMember {
+    background-color: rgb(246, 183, 193);
+    margin: auto;
+    padding: 5px;
+    width: 90%;
+    text-align: right;
+}
+.text {
+    color: rgb(0, 0, 0);
 }
 input {
     padding: 10px;

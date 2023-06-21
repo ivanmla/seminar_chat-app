@@ -38,10 +38,10 @@ class App extends Component {
         this.openDroneAndRoom()
         return (
             <>
-                <div>
-                    <h1>Welcome to chat app</h1>
-                </div>
-                <ViewMessages messages={this.state.messages} />
+                <ViewMessages
+                    messages={this.state.messages}
+                    currentMember={this.state.member}
+                />
                 <SendMessage onSendMessage={this.onSendMessage} />
             </>
         )

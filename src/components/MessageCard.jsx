@@ -1,12 +1,16 @@
 import React from 'react'
 
-const MessageCard = ({ message }) => {
+const MessageCard = ({ message, currentMember }) => {
+    const messageFromMe = message.member.id === currentMember.id
+    const className = messageFromMe ? 'message-currentMember' : 'message'
     return (
         <>
-            <span style={{ color: message.member.clientData.color }}></span>
-            <div className="message">
-                <div>{message.member.clientData.username}: </div>
-                <div>{message.text}</div>
+            <div className={className}>
+                <span style={{ color: message.member.clientData.color }}>
+                    {message.member.clientData.username}:{' '}
+                </span>
+                <br />
+                <span className="text">{message.text}</span>
             </div>
         </>
     )
